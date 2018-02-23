@@ -1,1 +1,13 @@
-locations#index page
+<h1>Locations</h1>
+
+<p>
+  <%= link_to 'New Location', new_location_path %>
+</p>
+
+<% @locations.each do |location| %>
+  <h3><%= location.name %></h3>
+  <p>
+    <%= link_to 'Edit', edit_location_path(location) %>
+  </p>
+  <%= render 'location', location: location%>
+<% end %>

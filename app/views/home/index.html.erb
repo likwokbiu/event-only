@@ -1,7 +1,14 @@
+<h1>Home</h1>
 
-<p>
-  <%= link_to 'View Locations', locations_path %>
-</p>
-<p>
-  <%= link_to 'Events', events_path %>
-</p>
+<h1>Locations</h1>
+
+<% @locations.each do |location| %>
+  <h3><%= location.name %></h3>
+  <%= render 'locations/location', location: location %>
+<% end %>
+
+<h1>Events</h1>
+
+<% @events.each do |current_event| %>
+  <%= render 'events/event', event: current_event %>
+<% end %>
